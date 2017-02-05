@@ -1,6 +1,6 @@
 'use strict';
 
-describe('module: auth, service: Login', function () {
+describe('module: auth, service: Auth', function () {
 
   // load the service's module
   beforeEach(module('auth'));
@@ -8,13 +8,13 @@ describe('module: auth, service: Login', function () {
   beforeEach(module('ngHtml2Js'));
 
   // instantiate service
-  var Login;
-  beforeEach(inject(function (_Login_) {
-    Login = _Login_;
+  var Auth;
+  beforeEach(inject(function (_Auth_) {
+    Auth = _Auth_;
   }));
 
   it('should do something', function () {
-    expect(!!Login).toBe(true);
+    expect(!!Auth).toBe(true);
   });
 
 });

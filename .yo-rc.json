@@ -1,0 +1,22 @@
+{
+  "generator-m-ionic": {
+    "answers": {
+      "appName": "MWA Todo App",
+      "appId": "com.mwaysolutions.mwa.todoapp",
+      "ionicCss": false,
+      "bowerPackages": [
+        "angular-dynamic-locale#~0.1.27",
+        "angular-translate#~2.11.0",
+        "angular-translate-loader-static-files#~2.11.0",
+        "localforage#~1.4.0"
+      ],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "plugins": [],
+      "appModule": "mwaTodoApp",
+      "ecosystems": []
+    }
+  }
+}

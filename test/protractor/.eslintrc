@@ -5,6 +5,8 @@
     "protractor": true
   },
   "globals": {
+    "require": true,
+    "module": true
   },
   "rules": {
   }

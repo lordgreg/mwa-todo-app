@@ -8,11 +8,17 @@ angular.module('main')
     $state
   ) {
 
-    this.loginData = {
-      email: '',
-      password: '',
-      rememberMe: false
+    this.loginData = {};
+
+    this.initLoginData = function () {
+      this.loginData = {
+        email: '',
+        password: '',
+        rememberMe: false
+      };
     };
+    this.initLoginData();
+
 
     this.login = function () {
       var that = this;
@@ -22,7 +28,9 @@ angular.module('main')
           if (that.loginData.rememberMe) {
             Auth.saveUser(Auth.data.user);
           }
-
+          else {
+            that.initLoginData();
+          }
           $state.go('main.list');
         })
         .catch(function (err) {

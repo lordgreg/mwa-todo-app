@@ -14,17 +14,18 @@ angular.module('main', [
         templateUrl: 'main/templates/menu.html',
         controller: 'MenuCtrl as menu',
         resolve: {
-          auth: function ($state, $q, Auth) {
+          auth: function ($state, $q, $log, Auth) {
             return Auth.getUser()
-            .then(function (data) {
-              if (data && data) {
-                angular.merge(Auth.data.user, Auth.data.user, data);
-              }
-              else {
-                $state.go('auth');
-                return $q.reject('No data stored.');
-              }
-            });
+              .then(function (data) {
+                if (data && data.id) {
+                  angular.merge(Auth.data.user, Auth.data.user, data);
+                }
+                return $q.resolve('Auth resolve done.');
+              })
+              .catch(function (err) {
+                $log.error(err);
+                return $q.reject(err);
+              });
           }
         }
       })
@@ -53,8 +54,17 @@ angular.module('main', [
     $state,
     $ionicHistory,
     $log,
+    $cordovaStatusbar,
     Auth
   ) {
+
+    document.addEventListener('deviceready', function () {
+      if (window.cordova) {
+        $cordovaStatusbar.styleHex('#66cc33');
+      }
+    });
+
+    // state change success handler
     $rootScope.$on('$stateChangeSuccess', function (event, toState) {
       $log.info('State change success validation');
 

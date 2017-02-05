@@ -18,7 +18,6 @@
 
     <!-- build:css main/styles/app.css -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="auth/styles/auth.css">
     <link rel="stylesheet" href="main/styles/main.css">
     <!-- endinject -->
     <!-- endbuild -->
@@ -27,7 +26,7 @@
 
     <!-- the nav bar will be updated as we navigate between views -->
     <!-- <ion-nav-bar> can be removed when using sidemenu (contained in menu.html) -->
-    <ion-nav-bar class="bar-energized">
+    <ion-nav-bar class="bar-balanced">
       <ion-nav-back-button></ion-nav-back-button>
     </ion-nav-bar>
     <!-- the current view will be rendered in the <ion-nav-view> directive -->
@@ -55,11 +54,14 @@
     <!-- build:js scripts/app.js -->
     <!-- inject:js -->
     <script src="main/main.js"></script>
+    <script src="main/services/tasks-serv.js"></script>
+    <script src="main/controllers/menu-ctrl.js"></script>
+    <script src="main/controllers/list-view-ctrl.js"></script>
+    <script src="main/controllers/detail-ctrl.js"></script>
     <script src="main/constants/config-const.js"></script>
     <script src="auth/auth.js"></script>
     <script src="auth/services/auth-serv.js"></script>
     <script src="auth/controllers/login-ctrl.js"></script>
-    <script src="auth/constants/auth-config-const.js"></script>
     <script src="app.js"></script>
     <!-- endinject -->
     <!-- endbuild -->

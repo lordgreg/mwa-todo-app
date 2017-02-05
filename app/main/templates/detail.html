@@ -1,0 +1,48 @@
+<ion-view class="detail-page">
+
+  <ion-nav-bar class="bar-balanced">
+    <ion-nav-buttons side="left">
+      <button ui-sref="main.list" class="button button-icon button-clear ion-ios-arrow-back">
+      </button>
+    </ion-nav-buttons>
+    <ion-nav-title>
+      Add task
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+      <button ng-if="ctrl.taskData.id" ng-click="ctrl.deleteTask()" class="button button-icon button-clear ion-ios-close-outline">
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content class="padding">
+
+    <form name="formData">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+    <span class="input-label">Title</span>
+    <input type="text" required ng-model="ctrl.taskData.title">
+  </label>
+        <label class="item item-input item-stacked-label">
+    <span class="input-label">Text</span>
+    <textarea rows="10" required ng-model="ctrl.taskData.text"></textarea>
+  </label>
+        <ion-checkbox ng-model="ctrl.taskData.done">Done?</ion-checkbox>
+      </div>
+
+      <div class="row no-padding">
+        <button
+          ng-if="!ctrl.taskData.id"
+          ng-disabled="formData.$invalid" class="col no-padding button button-block button-balanced" ng-click="ctrl.addTask()">
+          Add task
+        </button>
+        <button
+          ng-click="ctrl.updateTask()"
+          ng-if="ctrl.taskData.id"
+          class="button col button-balanced">
+          Update
+        </button>
+      </div>
+    </form>
+
+  </ion-content>
+</ion-view>

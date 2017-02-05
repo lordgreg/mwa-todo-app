@@ -1,0 +1,38 @@
+.login-page {
+  label.item-input {
+    padding-right: 16px;
+    border: 0;
+
+    input[type="text"],
+    input[type="password"] {
+      border: 1px solid $balanced;
+      padding: 0 8px 0 8px;
+    }
+  }
+  .item-checkbox {
+    border: 0;
+    input:checked + .checkbox-icon::before {
+      background: $balanced;
+      border-color: $balanced;
+    }
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    color: $balanced;
+
+    .icon {
+      height: 100px;
+      font-size: 80px;
+    }
+
+    .text {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: -20px;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.detail-page {
+
+  .item-checkbox {
+    input:checked + .checkbox-icon::before {
+      background: $balanced;
+      border-color: $balanced;
+    }
+  }
+
+}

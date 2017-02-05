@@ -1,23 +1,39 @@
 'use strict';
 angular.module('main')
-.controller('LoginCtrl', function (
-  Auth,
-  $ionicLoading,
-  $log,
-  $state
-) {
+  .controller('LoginCtrl', function (
+    Auth,
+    $ionicLoading,
+    $ionicPopup,
+    $log,
+    $state
+  ) {
 
-  this.login = function () {
-    $ionicLoading.show();
-    Auth.login()
-    .then(function (data) {
-      Auth.data.user.id = Math.round(Math.random() * 10000);
-      $log.info('Successfully logged. ID: ' + data.id);
-      $state.go('main');
-    })
-    .finally(function () {
-      $ionicLoading.hide();
-    });
-  };
+    this.loginData = {
+      email: '',
+      password: '',
+      rememberMe: false
+    };
 
-});
+    this.login = function () {
+      var that = this;
+      $ionicLoading.show();
+      Auth.login(this.loginData)
+        .then(function (/*data*/) {
+          if (that.loginData.rememberMe) {
+            Auth.saveUser(Auth.data.user);
+          }
+
+          $state.go('main.list');
+        })
+        .catch(function (err) {
+          $ionicPopup.alert({
+            title: 'noes!',
+            template: err.message + ''
+          });
+        })
+        .finally(function () {
+          $ionicLoading.hide();
+        });
+    };
+
+  });

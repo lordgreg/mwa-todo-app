@@ -1,23 +1,32 @@
-<ion-view view-title="login module">
-  <!-- do you want padding? -->
+<ion-view hide-nav-bar="true" class="login-page">
   <ion-content class="padding">
 
-<div class="list">
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">E-mail</span>
-    <input type="text">
-  </label>
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Password</span>
-    <input type="password">
-  </label>
-</div>
+    <div class="title">
+      <i class="icon icon-balanced ion-android-checkbox-outline"></i>
+      <div class="text">Todo App</div>
+    </div>
 
-<div class="">
-  <button class="button button-block button-positive" ng-click="ctrl.login()">
-    Log-In
-  </button>
-</div>
+    <form name="formData">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">E-mail</span>
+          <input type="text" name="email" ng-model="ctrl.loginData.email" required>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Password</span>
+          <input type="password" name="password" ng-model="ctrl.loginData.password" required>
+        </label>
+        <ion-checkbox ng-model="ctrl.loginData.rememberMe">Remember me</ion-checkbox>
+      </div>
 
+      <div class="padding">
+        <button
+          ng-disabled="formData.$invalid"
+          class="button button-block button-balanced" ng-click="ctrl.login()">
+          Log-In
+        </button>
+      </div>
+
+    </form>
   </ion-content>
 </ion-view>

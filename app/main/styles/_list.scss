@@ -1,0 +1,17 @@
+.list-page {
+
+  .item.done {
+    background-color: #CFDBC5;
+
+    a {
+      background-color: inherit;
+    }
+    div,
+    small {
+      color: $dark;
+      text-decoration: line-through;
+    }
+
+  }
+
+}

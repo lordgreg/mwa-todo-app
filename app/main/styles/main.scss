@@ -21,4 +21,12 @@ $ionicons-font-path: "../assets/fonts" !default;
 // Include all of Ionic
 @import "../../bower_components/ionic/scss/ionic";
 
+// own styles
+@import "../../auth/styles/login";
+@import "detail";
+@import "list";
 
+
+.no-padding {
+  padding: 0;
+}

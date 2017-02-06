@@ -2,6 +2,7 @@
 angular.module('main')
   .controller('ListViewCtrl', function (
     $scope,
+    $state,
     Auth,
     Tasks
   ) {

@@ -2,11 +2,11 @@
 
 var EC = protractor.ExpectedConditions;
 
-beforeEach(function () {
-  browser.get('/#/auth');
-});
-
 describe('Login Page', function () {
+
+  beforeEach(function () {
+    browser.get('/#/auth');
+  });
 
   it('Should be on login page', function () {
     expect(EC.urlContains('#/auth')).toBeTruthy();
@@ -52,9 +52,9 @@ describe('Login Page', function () {
       EC.not(
         EC.urlContains('/auth')
       ), 8000)
-    .then(function () {
-      expect(EC.urlContains('main/list'));
-    });
+      .then(function () {
+        expect(EC.urlContains('main/list'));
+      });
 
   });
 

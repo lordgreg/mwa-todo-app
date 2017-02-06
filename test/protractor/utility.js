@@ -8,7 +8,7 @@ var login = function () {
   element(by.model('ctrl.loginData.email')).sendKeys('mwa@mwaysolutions.com');
   element(by.model('ctrl.loginData.password')).sendKeys('abc123');
   element(by.css('[ng-click="ctrl.login()"]')).click();
-  browser.wait(
+  return browser.wait(
     EC.not(
       EC.urlContains('/auth')
     )

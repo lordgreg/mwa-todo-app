@@ -5,10 +5,10 @@ var login = function () {
   browser.get('/#/auth');
   element(by.model('ctrl.loginData.email')).clear();
   element(by.model('ctrl.loginData.password')).clear();
-  element(by.model('ctrl.loginData.rememberMe')).click();
+  // element.all(by.model('ctrl.loginData.rememberMe')).get(0).click();
   element(by.model('ctrl.loginData.email')).sendKeys('mwa@mwaysolutions.com');
   element(by.model('ctrl.loginData.password')).sendKeys('abc123');
-  element(by.css('button ng-click="ctrl.login()"')).click();
+  element(by.css('[ng-click="ctrl.login()"]')).click();
   browser.wait(
     EC.not(
       EC.urlContains('/auth')

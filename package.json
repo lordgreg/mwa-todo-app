@@ -4,7 +4,9 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "test": "gulp build --minify && gulp karma"
+    "test": "gulp build --minify && gulp karma",
+    "karma": "karma start karma.conf.js --log-level debug",
+    "chakram": "mocha 'test/chakram/**.js'"
   },
   "devDependencies": {
     "browser-sync": "^2.8.3",

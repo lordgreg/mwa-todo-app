@@ -1,28 +1,32 @@
-// 'use strict';
+'use strict';
 
-// var utility = require('../utility.js');
-// var EC = protractor.ExpectedConditions;
+var utility = require('../utility.js');
+var EC = protractor.ExpectedConditions;
 
-// beforeEach(function () {
-//   utility.login();
-// });
+beforeAll(function () {
+  utility.login();
+  browser.get('/#/main/list');
+});
 
-// describe('List Page', function () {
+describe('List Page', function () {
 
-//   it('Should be on list', function () {
-//     expect(EC.urlContains('/main/list'));
-//   });
+  it('Should be on list', function () {
+    expect(EC.urlContains('/main/list'));
+  });
 
-//   it('Should have add icon in top-right side', function () {
-//     var addButton = element(by.css('[nav-bar="active"] .buttons-right button[ui-sref="main.detail"]'));
+  it('Should have add icon in top-right side', function () {
+    browser.driver.sleep(1000);
+    var addTaskButton = element(by.css('[nav-bar="active"] .right-buttons .button'));
+    addTaskButton.click();
+  //   var addButton = element(by.css('[nav-bar="active"] .ion-ios-plus-outline'));
+  //   console.log('is add button displayed?');
+  //   expect(addButton.isEnabled()).toBeTruthy();
+  });
 
-//     expect(addButton).toBeTruthy();
-//   });
+  it('Should have none (0) elements in Task view', function () {
+    var tasks = element.all(by.repeater('task in ctrl.data.tasks'));
 
-//   it('Should have none (0) elements in Task view', function () {
-//     var tasks = element.all(by.repeater('task in ctrl.data.tasks'));
+    expect(tasks.length).toBe(undefined);
+  });
 
-//     expect(tasks).toBe([]);
-//   });
-
-// });
+});

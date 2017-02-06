@@ -1,10 +1,8 @@
 'use strict';
 
-// var utility = require('../utility.js');
 var EC = protractor.ExpectedConditions;
 
 beforeEach(function () {
-  browser.ignoreSynchronization = true;
   browser.get('/#/auth');
 });
 
@@ -17,7 +15,6 @@ describe('Login Page', function () {
   it('Should have empty fields', function () {
     expect(element(by.model('ctrl.loginData.email')).getText()).toBe('');
     expect(element(by.model('ctrl.loginData.password')).getText()).toBe('');
-    // expect(element(by.css('input[type="checkbox"]')).isSelected()).toBeFalsy();
     expect(element(by.css('[ng-click="ctrl.login()"]')).isEnabled()).toBeFalsy();
   });
 

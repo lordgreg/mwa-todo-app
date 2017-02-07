@@ -23,6 +23,7 @@ describe('module: auth, controller: LoginCtrl', function () {
     LoginCtrl.initLoginData();
 
     expect(LoginCtrl.loginData.id).toBe(undefined);
+    expect(LoginCtrl.loginData.email).toBe('');
   });
 
 });

@@ -20,4 +20,8 @@ describe('module: main, controller: DetailCtrl', function () {
     expect(!!DetailCtrl).toBe(true);
   });
 
+  it('should not have data defined', function () {
+    expect(!!DetailCtrl.data).not.toBe(false);
+  });
+
 });

@@ -35,4 +35,25 @@ describe('List Page', function () {
     expect(tasks.length).toBe(undefined);
   });
 
+  it('Should have clickable menu button', function () {
+    var menuButton = element(by.css('ion-view.list-page .nav-bar-block[nav-bar="active"] button[menu-toggle="left"]'));
+
+    // this part is only to check if our CSS selector above returns ONLY ONE element
+    // var howManyMenuButtons = element.all(by.css('ion-view.list-page .nav-bar-block[nav-bar="active"] button[menu-toggle="left"]'));
+    // howManyMenuButtons.count()
+    // .then(function (number) {
+      // console.log('We have ' + number + ' menu button(s)!');
+    // });
+
+    // check if menu is there...
+    expect(menuButton.isDisplayed()).toBe(true);
+
+    // click on it...
+    menuButton.click();
+
+    // now expect body to have extra class 'menu-open'
+    expect(element(by.css('body.menu-open')).isPresent()).toBe(true);
+
+  });
+
 });

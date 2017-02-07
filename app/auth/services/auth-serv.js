@@ -23,7 +23,6 @@ angular.module('auth')
       var that = this;
 
       $log.info('Simulating login request');
-
       $timeout(function () {
         $http.get(Config.ENV.SERVER_URL + 'users.json')
           .then(function (data) {
@@ -35,7 +34,7 @@ angular.module('auth')
             }
             else {
               $log.info('Invalid credentials.');
-              defer.reject({ message: 'Invalid credentials.'});
+              defer.reject({ message: 'Invalid credentials.' });
             }
           })
           .catch(function (err) {
@@ -65,7 +64,7 @@ angular.module('auth')
     };
 
     this.saveUser = function (user) {
-      if  (!user) {
+      if (!user) {
         user = this.data.user;
       }
       return localforage.setItem('user', user);

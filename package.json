@@ -6,7 +6,9 @@
   "scripts": {
     "test": "gulp build --minify && gulp karma",
     "karma": "karma start karma.conf.js --log-level debug",
-    "chakram": "mocha 'test/chakram/**.js'"
+    "chakram": "mocha 'test/chakram/**.js'",
+    "protractor": "gulp protractor --proxy --env=proxydev"
+
   },
   "devDependencies": {
     "browser-sync": "^2.8.3",
@@ -39,11 +41,14 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^2.0.0",
     "gulp-useref": "^3.0.4",
+    "jasmine-spec-reporter": "^3.2.0",
     "karma": "^1.1.0",
     "karma-angular-filesort": "^1.0.0",
+    "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.0.2",
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.0",
+    "karma-spec-reporter": "0.0.26",
     "lodash": "^4.3.0",
     "main-bower-files": "^2.9.0",
     "minimist": "^1.2.0",

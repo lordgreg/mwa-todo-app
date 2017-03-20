@@ -2,6 +2,7 @@
 .DS_Store
 .tmp
 .sass-cache
+/test/coverage/
 
 # npm & bower
 /node_modules/
